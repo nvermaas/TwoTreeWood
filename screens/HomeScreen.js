@@ -1,22 +1,26 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Image, ImageBackground } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import NavigationBar from '../components/NavigationBar'
-
-const image = { uri: "https://uilennest.net/static/media/tree2.35a23ddb.png" };
+import { useFetchData } from '../hooks/useFetchData';
+//const image = { uri: "https://uilennest.net/static/media/tree2.35a23ddb.png" };
 
 const HomeScreen = ({ navigation }) => {
+        useFetchData("https://uilennest.net/homebase/datacenter/items/",{onMount:true})
     return (
-    <View style={styles.container}>
-        <Text style={styles.text}>TwoTreeWood</Text>
-            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-                <Text style={styles.smaller_text}>Welcome in TwoTreeWood</Text>
-            </ImageBackground>
+        <View>
+            <Text style={styles.text}>TwoTreeWood</Text>
 
-        <StatusBar style="auto" />
+            <View style={styles.container}>
+                <ImageBackground source={require("../assets/tree2.png")}
+                       resizeMode="center"
+                       style={styles.image}>
 
+                </ImageBackground>
 
-    </View>
+                <StatusBar style="auto" />
+
+            </View>
+        </View>
 
 
     );
@@ -25,10 +29,14 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     image: {
         flex: 1,
-        justifyContent: "center"
+        justifyContent: "center",
+        width: 300,
+        height: 200,
     },
 
     text: {

@@ -1,11 +1,14 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+
+import { StoreProvider } from './Store';
+import { reducer, initialState } from './reducers/GlobalStateReducer';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 import HomeScreen from './screens/HomeScreen'
 import TravelScreen from './screens/TravelScreen'
@@ -17,7 +20,9 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+
   return (
+      <StoreProvider initialState={initialState} reducer={reducer}>
       <NavigationContainer>
           <Tab.Navigator>
               <Tab.Screen
@@ -68,6 +73,7 @@ export default function App() {
               />
           </Tab.Navigator>
       </NavigationContainer>
+      </StoreProvider>
   );
 }
 
