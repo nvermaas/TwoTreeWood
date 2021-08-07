@@ -1,24 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Image, ImageBackground } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native';
 import NavigationBar from '../components/NavigationBar'
 
-const image = { uri: "https://uilennest.net/static/media/tree2.35a23ddb.png" };
+const image = { uri: "https://uilennest.net/data_on_yggdrasil/astrobase/data/191231001/3836665_annotated_grid.jpg" };
 
-const HomeScreen = ({ navigation }) => {
+const AstronomyScreen = ({ navigation }) => {
     return (
-    <View style={styles.container}>
-        <Text style={styles.text}>TwoTreeWood</Text>
+        <View style={styles.container}>
+            <Text style={styles.text}>My Astro</Text>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-                <Text style={styles.smaller_text}>Welcome in TwoTreeWood</Text>
             </ImageBackground>
-
-        <StatusBar style="auto" />
-
-
-    </View>
-
-
+        </View>
     );
 };
 
@@ -49,5 +41,4 @@ const styles = StyleSheet.create({
         backgroundColor: "#000000c0"
     }
 });
-
-export default HomeScreen
+export default AstronomyScreen

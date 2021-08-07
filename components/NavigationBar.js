@@ -11,10 +11,18 @@ const NavigationBar = (props) => {
                 }
             />
 
+
             <Button
                 title="Hiking"
                 onPress={() =>
                     props.navigation.navigate('Hiking', { name: 'Hiking' })
+                }
+            />
+
+            <Button
+                title="Astronomy"
+                onPress={() =>
+                    props.navigation.navigate('Astronomy', { name: 'Astronomy' })
                 }
             />
 
