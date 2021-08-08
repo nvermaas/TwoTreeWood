@@ -4,9 +4,9 @@ import { StyleSheet, Text, View, Button, ImageBackground } from 'react-native';
 import Tiles from '../components/Tiles'
 import { useGlobalReducer } from '../Store';
 
-const image = { uri: "https://uilennest.net/xs4all/hiking/media/yoho2003.jpg" };
+const image = { uri: "https://uilennest.net/static/uilennest/astroview.png" };
 
-const HikingScreen = () => {
+const ITScreen = ({ navigation }) => {
 
     const [ my_state , my_dispatch] = useGlobalReducer()
     const loading = my_state.status === 'fetching'
@@ -15,7 +15,7 @@ const HikingScreen = () => {
     let renderData
 
     if (my_state.status==='data_is_fetched') {
-        renderData = <Tiles data = {my_state.fetched_data} parent = "hiking"/>
+        renderData = <Tiles data = {my_state.fetched_data} parent = "it-projects"/>
     }
 
     return (
@@ -53,5 +53,4 @@ const styles = StyleSheet.create({
         backgroundColor: "#000000c0"
     }
 });
-
-export default HikingScreen
+export default ITScreen

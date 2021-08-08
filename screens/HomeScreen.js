@@ -11,12 +11,12 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.text}>TwoTreeWood</Text>
 
             <View style={styles.container}>
-                <ImageBackground source={require("../assets/tree2.png")}
+                <Image source={require("../assets/tree2.png")}
                        resizeMode="center"
                        style={styles.image}>
 
-                </ImageBackground>
-
+                </Image>
+                <Text style={styles.h5}>A mobile version of the OneTreeWood website at https://uilennest.net</Text>
                 <StatusBar style="auto" />
 
             </View>
@@ -47,7 +47,14 @@ const styles = StyleSheet.create({
         textAlign: "center",
         backgroundColor: "#000000c0"
     },
+    h5: {
+        color: "black",
+        fontSize: 22,
+        lineHeight: 40,
 
+        textAlign: "center",
+        //backgroundColor: "white"
+    },
     smaller_text: {
         color: "white",
         fontSize: 20,

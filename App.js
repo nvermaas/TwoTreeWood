@@ -14,6 +14,7 @@ import HomeScreen from './screens/HomeScreen'
 import TravelScreen from './screens/TravelScreen'
 import HikingScreen from './screens/HikingScreen'
 import AstronomyScreen from './screens/AstronomyScreen'
+import ITScreen from './screens/ITScreen'
 import AboutScreen from './screens/AboutScreen'
 
 const Stack = createStackNavigator();
@@ -58,8 +59,18 @@ export default function App() {
                   name="Astronomy"
                   component={AstronomyScreen}
                   options={{ title: 'Astronomy',
+                      tabBarLabel: 'Astro',
                       tabBarIcon: ({ color, size }) => (
                           <MaterialCommunityIcons name="weather-night" color={color} size={size} />
+                      ),
+                  }}
+              />
+              <Tab.Screen
+                  name="IT"
+                  component={ITScreen}
+                  options={{ title: 'IT',
+                      tabBarIcon: ({ color, size }) => (
+                          <MaterialCommunityIcons name="desktop-classic" color={color} size={size} />
                       ),
                   }}
               />
